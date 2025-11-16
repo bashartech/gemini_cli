@@ -1,0 +1,169 @@
+/*
+Measured Values (from GEMINI.md):
+- Font Family: 'Poppins', 'Inter', sans-serif
+- Colors:
+    - Gradient Top: #A53DFF
+    - Gradient Middle: #4C7CFF
+    - Gradient Bottom: #0CC0A1
+    - Nav Text: #FFFFFF
+    - Sign Up Button BG: #B884F5
+    - Sign Up Button Text: #FFFFFF
+    - Log In Button BG: #FFFFFF
+    - Log In Button Text: #6B6B6B
+    - Hero Text: #FFFFFF (opacity 0.85 for paragraph)
+    - Primary Button BG: #FFFFFF
+    - Primary Button Text: #1E1E1E
+    - Secondary Button BG: #1B2934 -> #1F3844
+    - Secondary Button Text: #FFFFFF
+- Font Sizes:
+    - h1: 90px (approx)
+    - p (hero): 22px (approx)
+    - nav links: 16px (assumed)
+- Spacing:
+    - Header Padding: 20px 0
+    - Nav Link Gap: 32px
+    - Hero Padding Top: 100px
+    - Hero Buttons Gap: 20px
+- Border Radius:
+    - Header Buttons: 10px
+    - Hero Buttons: 12px
+*/
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Poppins', 'Inter', sans-serif;
+    color: #FFFFFF;
+    background: linear-gradient(to bottom, #A53DFF, #4C7CFF, #0CC0A1);
+    overflow-x: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+.main-header {
+    padding: 20px 0;
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-style: italic;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.main-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 32px;
+}
+
+.main-nav a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    cursor: pointer;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 10px;
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+.btn-signup {
+    background-color: #B884F5;
+    color: #FFFFFF;
+}
+
+.btn-login {
+    background-color: #FFFFFF;
+    color: #6B6B6B;
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    padding-top: 100px;
+}
+
+.hero-section h1 {
+    font-size: 90px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-size: 22px;
+    opacity: 0.85;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn-primary {
+    background-color: #FFFFFF;
+    color: #1E1E1E;
+    padding: 12px 32px;
+    border-radius: 12px;
+    font-weight: 700;
+}
+
+.btn-secondary {
+    background: linear-gradient(to right, #1B2934, #1F3844);
+    color: #FFFFFF;
+    padding: 12px 32px;
+    border-radius: 12px;
+    font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .main-nav, .header-buttons {
+        display: none; /* Simple hide for mobile, would need a hamburger menu for full functionality */
+    }
+
+    .hero-section h1 {
+        font-size: 60px;
+    }
+
+    .hero-section p {
+        font-size: 18px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
